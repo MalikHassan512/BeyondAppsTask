@@ -9,8 +9,8 @@ const MapViewCom = ({ latlng }) => {
       key={latlng[0] + latlng[1]}
         style={styles.map}
         initialRegion={{
-          latitude: latlng[0],
-          longitude: latlng[1],
+          latitude: latlng?.[0],
+          longitude: latlng?.[1],
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
