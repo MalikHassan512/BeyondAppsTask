@@ -6,6 +6,7 @@ const MapViewCom = ({ latlng }) => {
   return (
     <View style={styles.container}>
       <MapView
+      key={latlng[0] + latlng[1]}
         style={styles.map}
         initialRegion={{
           latitude: latlng[0],
