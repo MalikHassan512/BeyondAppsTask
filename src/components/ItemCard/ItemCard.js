@@ -4,6 +4,7 @@ import FastImage from 'react-native-fast-image'
 import {  Strings } from '../../constants';
 import styles from './styles';
 
+// ItemCard component
 const ItemCard = ({ itemName, itemImage, itemDetail, onPress }) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.card}>

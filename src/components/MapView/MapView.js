@@ -3,6 +3,7 @@ import React from 'react';
 import MapView from 'react-native-maps';
 import styles from './styles';
 
+// MapView component to display the map
 const MapViewCom = ({ latlng }) => {
   return (
     <View style={styles.container}>
@@ -20,5 +21,5 @@ const MapViewCom = ({ latlng }) => {
   );
 };
 
-
+// export the component as default
 export default MapViewCom;
