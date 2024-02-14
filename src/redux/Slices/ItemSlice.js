@@ -21,6 +21,7 @@ export const fetchItems = createAsyncThunk("item/fetchItems", async () => {
 const initialState = {
     items: [],
     loading: false,
+    error: false,
     };
 
 const itemSlice = createSlice({
@@ -37,6 +38,7 @@ const itemSlice = createSlice({
         });
         builder.addCase(fetchItems.rejected, (state) => {
             state.loading = false;
+            state.error = true;
         });
     }
 

@@ -5,7 +5,6 @@ import env from "../../config/env";
 export const fetchLocations = createAsyncThunk("location/fetchLocations", async (name) => {
     try {
         const response = await axios.get(`${env.LOCATION_API}/${name}`);
-        console.log("api::>>>",response?.data[0]?.capitalInfo?.latlng);
         return response?.data[0]?.capitalInfo?.latlng;
     } catch (error) {
         console.error(error);
@@ -17,6 +16,7 @@ export const fetchLocations = createAsyncThunk("location/fetchLocations", async 
 const initialState = {
     latlng: [],
     loading: false,
+    error: false,
     };
 
 const locationSlice = createSlice({
@@ -33,12 +33,11 @@ const locationSlice = createSlice({
         });
         builder.addCase(fetchLocations.rejected, (state) => {
             state.loading = false;
+            state.error = true;
         });
     }
 
 });
-
-export const { clearValues } = locationSlice.actions;
 
 export default locationSlice.reducer;
 

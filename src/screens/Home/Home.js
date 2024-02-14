@@ -1,12 +1,11 @@
-import { View, Text, StyleSheet, FlatList, SafeAreaView } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import { View, Text, FlatList, SafeAreaView } from 'react-native'
+import React, { useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
-import { fetchItems } from '../redux/Slices/ItemSlice'
+import { fetchItems } from '../../redux/Slices/ItemSlice'
 import { useDispatch, useSelector } from 'react-redux'
-import ItemCard from '../components/ItemCard'
-import FontSize from '../constants/FontSize'
-import Strings from '../constants/Strings'
-import Loader from '../components/Loader'
+import { Strings } from '../../constants'
+import { ItemCard, Loader } from '../../components'
+import styles from './styles'
 
 const Home = () => {
     const navigation = useNavigation()
@@ -19,7 +18,7 @@ const Home = () => {
     }, []);
 
     const onPressItem = (item) => {
-        navigation.navigate("ItemDetails", {
+        navigation.navigate(Strings.ItemDetails, {
             data: item,
         });
       }
@@ -54,17 +53,7 @@ const Home = () => {
       );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
 
-    headerText: {
-        fontSize: FontSize.veryLarge,
-        fontWeight: 'bold',
-        padding: 10,
-    },
-    })
 
 
 export default Home

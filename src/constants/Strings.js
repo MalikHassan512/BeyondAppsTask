@@ -5,4 +5,6 @@ export default {
     AltName:'Alt Name:',
     Origin:'Origin:',
     MoreDetails:'For more details click on link',
+    Home: 'Home',
+    ItemDetails: "ItemDetails",
 }

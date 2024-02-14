@@ -1,6 +1,7 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
 import MapView from 'react-native-maps';
+import styles from './styles';
 
 const MapViewCom = ({ latlng }) => {
   return (
@@ -19,16 +20,5 @@ const MapViewCom = ({ latlng }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    height: '100%',
-    width: '100%',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  },
-  map: {
-    ...StyleSheet.absoluteFillObject,
-  },
-});
 
 export default MapViewCom;
